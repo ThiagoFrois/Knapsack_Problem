@@ -2,7 +2,7 @@
 
 void Problem::ExecuteBeamSearch()
 {
-
+  agentOne.Execute();
 }
 
 void Problem::ExecuteGeneticAlgorithm()

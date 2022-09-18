@@ -17,6 +17,7 @@ class Knapsack
 
     void RemoveItem(int itemNumber);
     void AddItem(int itemNumber);
+    bool SearchItem(int itemNumber);
 
     Knapsack();
     ~Knapsack();

@@ -1,6 +1,8 @@
 #pragma once
 
+#include <iostream>
 #include <vector>
+#include <bits/stdc++.h>
 
 #include "knapsack.hpp"
 
@@ -10,10 +12,16 @@ class BeamSearch
 {
   public:
     void GenInitialRandomStates();
+    
     void SortBorder();
+    
     void GenSons();
     void SelectSons();
+    
     bool CheckObjectiveStates();
+
+    bool compareTwoKnapsack(Knapsack one, Knapsack two);
+
     void Execute();
 
     BeamSearch();
