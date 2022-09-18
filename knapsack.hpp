@@ -1,12 +1,20 @@
 #pragma once
 
-#define MAX_ITENS 10 // Total de itens que existem
+#include <iostream>
+
+#define MAX_ITENS 4 // Total de itens que existem
 #define CAPACITY 100 // Peso máximo que mochila suporta
 
 struct Item
 {
-  int m_weight;
-  int m_value;
+  int m_weight{1};
+  int m_value{1};
+
+  Item()
+  {
+    m_weight = 1;
+    m_value = 1;
+  }
 };
 
 class Knapsack
@@ -22,9 +30,9 @@ class Knapsack
     Knapsack();
     ~Knapsack();
 
-  private:
     Item m_itens[MAX_ITENS];
-
+  private:
+    
     int m_itensWithin[10]{0};
 
     int m_totalWeight;

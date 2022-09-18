@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <vector>
-#include <bits/stdc++.h>
+#include <algorithm>
 
 #include "knapsack.hpp"
 
@@ -20,7 +20,11 @@ class BeamSearch
     
     bool CheckObjectiveStates();
 
-    bool compareTwoKnapsack(Knapsack one, Knapsack two);
+    void CleanBorder();
+
+    void printBorder();
+
+    static bool CompareTwoKnapsack(Knapsack one, Knapsack two);
 
     void Execute();
 
@@ -28,7 +32,11 @@ class BeamSearch
     ~BeamSearch();
 
   private:
-    Knapsack m_knapsacks[POPULATION];
+    Knapsack m_knapsacks[POPULATION]{Knapsack()};
     
     std::vector<Knapsack> m_border;
+
+    Knapsack border[POPULATION*MAX_ITENS];
+
+    int tam{0};
   };
