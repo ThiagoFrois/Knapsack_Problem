@@ -26,6 +26,8 @@ void Knapsack::AddItem(int itemNumber)
   m_itensWithin[itemNumber] = 1;
   m_totalWeight += m_itens[itemNumber].m_weight;
   m_totalValue += m_itens[itemNumber].m_value;
+  if (m_totalWeight > CAPACITY)
+    m_totalValue = 0;
 }
 
 bool Knapsack::SearchItem(int itemNumber)

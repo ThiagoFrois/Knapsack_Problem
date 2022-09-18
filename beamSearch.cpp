@@ -2,6 +2,9 @@
 
 void BeamSearch::GenInitialRandomStates() 
 {
+  // Implementação manual dos k estados iniciais das mochilas
+  // Precisa implementar a aleatorização desses k estados
+
   m_knapsacks[0].AddItem(0);
   m_knapsacks[1].AddItem(1);
   m_knapsacks[2].AddItem(2);
@@ -16,6 +19,8 @@ void BeamSearch::SortBorder()
 
 void BeamSearch::GenSons()
 {
+  // Gera todos os filhos dde cada estado
+  // Para estados que ultrapassam o a capacidade da atribuir custo-benefício 0
   for(int i = 0; i < POPULATION; i++)
   {
     for(int j = 0; j < MAX_ITENS; j++)
@@ -34,6 +39,7 @@ void BeamSearch::GenSons()
 
 void BeamSearch::SelectSons()
 {
+  // Seleciona os k melhores filhos com base na ordenação da fronteira
   for(int i = 0; i < POPULATION; i++)
   {
     m_knapsacks[i] = border[i];
@@ -42,6 +48,8 @@ void BeamSearch::SelectSons()
 
 bool BeamSearch::CheckObjectiveStates()
 {
+  // Precisa implementar a verificação de objetivo
+  // Provavelmente será não ser possível inserir mais nenhum item na mochila.
   return true;
 }
 
@@ -66,11 +74,14 @@ void BeamSearch::printBorder()
 
 bool BeamSearch::CompareTwoKnapsack(Knapsack one, Knapsack two)
 {
+  // Função de comparação entre dois estados da mochila
   return (one.GetValue()/(float)one.GetWeight() >= two.GetValue()/(float)two.GetWeight());
 }
 
 void BeamSearch::Execute()
 {
+  // Algoritmo do Beam Search
+  // Precisa implementar a verificação para parar somente quando atingir o objetivo, não for possível inserir mais nenhum item na mochila.
   //while (true) 
   for(int i = 0; i < 5; i++)
   {
@@ -93,6 +104,7 @@ void BeamSearch::Execute()
 
 BeamSearch::BeamSearch()
 {
+  // Gera os estados iniciais aleatórios da mochila
   GenInitialRandomStates();
 }
 
