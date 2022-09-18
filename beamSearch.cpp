@@ -20,6 +20,7 @@ void BeamSearch::GenSons()
 
 }
 
+
 void BeamSearch::SelectSons()
 {
 
@@ -27,13 +28,18 @@ void BeamSearch::SelectSons()
 
 bool BeamSearch::CheckObjectiveStates()
 {
-  while (True) 
+  return true;
+}
+
+void BeamSearch::Execute()
+{
+  while (true) 
   {
-      GenSons();
-      SortBorder();
-      if(CheckObjectiveStates())
-        return;
-      SelectSons();
+    GenSons();
+    SortBorder();
+    if(CheckObjectiveStates())
+      break;
+    SelectSons();
   }
 }
 

@@ -12,6 +12,8 @@ class BeamSearch
     void GenInitialRandomStates();
     void SortBorder();
     void GenSons();
+    void SelectSons();
+    bool CheckObjectiveStates();
     void Execute();
 
     BeamSearch();
