@@ -6,11 +6,13 @@
 
 #include "knapsack.hpp"
 
-#define POPULATION 4
+#define POPULATION 2
 
 class BeamSearch
 {
   public:
+    void RamdomNumbers(int a, int b);
+
     void GenInitialRandomStates();
     
     void SortBorder();
@@ -36,7 +38,7 @@ class BeamSearch
     
     std::vector<Knapsack> m_border;
 
-    Knapsack border[POPULATION*MAX_ITENS];
+    Knapsack border[POPULATION*(MAX_ITENS + 2)];
 
     int tam{0};
-  };
+};
