@@ -6,7 +6,7 @@
 
 #include "knapsack.hpp"
 
-#define POPULATION 2
+#define POPULATION 4
 
 class BeamSearch
 {
